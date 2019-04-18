@@ -39,6 +39,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
+import com.megacrit.cardcrawl.characters.CharacterManager;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -104,66 +105,126 @@ public class BaseMod {
 
 	private static ArrayList<ModBadge> modBadges;
 
+	@Deprecated
 	private static ArrayList<ISubscriber> toRemove;
+	@Deprecated
 	private static ArrayList<StartActSubscriber> startActSubscribers;
+	@Deprecated
 	private static ArrayList<PostCampfireSubscriber> postCampfireSubscribers;
+	@Deprecated
 	private static ArrayList<PostDrawSubscriber> postDrawSubscribers;
+	@Deprecated
 	private static ArrayList<PostExhaustSubscriber> postExhaustSubscribers;
+	@Deprecated
 	private static ArrayList<OnCardUseSubscriber> onCardUseSubscribers;
+	@Deprecated
 	private static ArrayList<PostDungeonInitializeSubscriber> postDungeonInitializeSubscribers;
+	@Deprecated
 	private static ArrayList<PostEnergyRechargeSubscriber> postEnergyRechargeSubscribers;
+	@Deprecated
 	private static ArrayList<PostInitializeSubscriber> postInitializeSubscribers;
+	@Deprecated
 	private static ArrayList<PreMonsterTurnSubscriber> preMonsterTurnSubscribers;
+	@Deprecated
 	private static ArrayList<RenderSubscriber> renderSubscribers;
+	@Deprecated
 	private static ArrayList<PreRenderSubscriber> preRenderSubscribers;
+	@Deprecated
 	private static ArrayList<PostRenderSubscriber> postRenderSubscribers;
+	@Deprecated
 	private static ArrayList<ModelRenderSubscriber> modelRenderSubscribers;
+	@Deprecated
 	private static ArrayList<PreStartGameSubscriber> preStartGameSubscribers;
+	@Deprecated
 	private static ArrayList<StartGameSubscriber> startGameSubscribers;
+	@Deprecated
 	private static ArrayList<PreUpdateSubscriber> preUpdateSubscribers;
+	@Deprecated
 	private static ArrayList<PostUpdateSubscriber> postUpdateSubscribers;
+	@Deprecated
 	private static ArrayList<PostDungeonUpdateSubscriber> postDungeonUpdateSubscribers;
+	@Deprecated
 	private static ArrayList<PreDungeonUpdateSubscriber> preDungeonUpdateSubscribers;
+	@Deprecated
 	private static ArrayList<PostPlayerUpdateSubscriber> postPlayerUpdateSubscribers;
+	@Deprecated
 	private static ArrayList<PrePlayerUpdateSubscriber> prePlayerUpdateSubscribers;
+	@Deprecated
 	private static ArrayList<PostCreateStartingDeckSubscriber> postCreateStartingDeckSubscribers;
+	@Deprecated
 	private static ArrayList<PostCreateStartingRelicsSubscriber> postCreateStartingRelicsSubscribers;
+	@Deprecated
 	private static ArrayList<PostCreateShopRelicSubscriber> postCreateShopRelicSubscribers;
+	@Deprecated
 	private static ArrayList<PostCreateShopPotionSubscriber> postCreateShopPotionSubscribers;
+	@Deprecated
 	private static ArrayList<EditCardsSubscriber> editCardsSubscribers;
+	@Deprecated
 	private static ArrayList<EditRelicsSubscriber> editRelicsSubscribers;
+	@Deprecated
 	private static ArrayList<EditCharactersSubscriber> editCharactersSubscribers;
+	@Deprecated
 	private static ArrayList<EditStringsSubscriber> editStringsSubscribers;
+	@Deprecated
 	private static ArrayList<AddAudioSubscriber> addAudioSubscribers;
+	@Deprecated
 	private static ArrayList<EditKeywordsSubscriber> editKeywordsSubscribers;
+	@Deprecated
 	private static ArrayList<PostBattleSubscriber> postBattleSubscribers;
+	@Deprecated
 	private static ArrayList<SetUnlocksSubscriber> setUnlocksSubscribers;
+	@Deprecated
 	private static ArrayList<PostPotionUseSubscriber> postPotionUseSubscribers;
+	@Deprecated
 	private static ArrayList<PrePotionUseSubscriber> prePotionUseSubscribers;
+	@Deprecated
 	private static ArrayList<PotionGetSubscriber> potionGetSubscribers;
+	@Deprecated
 	private static ArrayList<RelicGetSubscriber> relicGetSubscribers;
+	@Deprecated
 	private static ArrayList<PostPowerApplySubscriber> postPowerApplySubscribers;
+	@Deprecated
 	private static ArrayList<OnPowersModifiedSubscriber> onPowersModifiedSubscribers;
+	@Deprecated
 	private static ArrayList<PostDeathSubscriber> postDeathSubscribers;
+	@Deprecated
 	private static ArrayList<OnStartBattleSubscriber> startBattleSubscribers;
+	@Deprecated
 	private static ArrayList<AddCustomModeModsSubscriber> addCustomModeModsSubscribers;
+	@Deprecated
 	private static ArrayList<MaxHPChangeSubscriber> maxHPChangeSubscribers;
+	@Deprecated
 	private static ArrayList<PreRoomRenderSubscriber> preRoomRenderSubscribers;
+	@Deprecated
 	private static ArrayList<OnPlayerLoseBlockSubscriber> onPlayerLoseBlockSubscribers;
+	@Deprecated
 	private static ArrayList<OnPlayerDamagedSubscriber> onPlayerDamagedSubscribers;
 
+	@Deprecated
 	private static ArrayList<AbstractCard> redToAdd;
+	@Deprecated
 	private static ArrayList<String> redToRemove;
+	@Deprecated
 	private static ArrayList<AbstractCard> greenToAdd;
+	@Deprecated
 	private static ArrayList<String> greenToRemove;
+	@Deprecated
 	private static ArrayList<AbstractCard> blueToAdd;
+	@Deprecated
 	private static ArrayList<String> blueToRemove;
+	@Deprecated
 	private static ArrayList<AbstractCard> colorlessToAdd;
+	@Deprecated
 	private static ArrayList<String> colorlessToRemove;
+	@Deprecated
 	private static ArrayList<AbstractCard> curseToAdd;
+	@Deprecated
 	private static ArrayList<String> curseToRemove;
+	@Deprecated
 	private static ArrayList<AbstractCard> customToAdd;
+	@Deprecated
 	private static ArrayList<String> customToRemove;
+	@Deprecated
 	private static ArrayList<AbstractCard.CardColor> customToRemoveColors;
 
 	private static HashMap<AbstractCard.CardColor, HashMap<String, AbstractRelic>> customRelicPools;
@@ -188,6 +249,7 @@ public class BaseMod {
 
 	private static HashMap<String, Class<? extends AbstractPower>> powerMap;
 
+	@Deprecated
 	private static HashMap<String, Sfx> audioToAdd;
 
 	private static HashMap<String, String> keywordProperNames;
@@ -393,6 +455,7 @@ public class BaseMod {
 	}
 
 	// initializeTypeTokens -
+	@Deprecated
 	private static void initializeTypeMaps() {
 		logger.info("initializeTypeMaps");
 
@@ -419,6 +482,7 @@ public class BaseMod {
 	}
 
 	// initializeSubscriptions -
+	@Deprecated
 	private static void initializeSubscriptions() {
 		toRemove = new ArrayList<>();
 		startActSubscribers = new ArrayList<>();
@@ -470,6 +534,7 @@ public class BaseMod {
 	}
 
 	// initializeCardLists -
+	@Deprecated
 	private static void initializeCardLists() {
 		redToAdd = new ArrayList<>();
 		redToRemove = new ArrayList<>();
@@ -588,6 +653,7 @@ public class BaseMod {
 	}
 
 	// Add Sfx in audio map to SoundMaster
+	@Deprecated
 	private static void addAudioToSoundMaster(SoundMaster __instance) {
 		@SuppressWarnings("unchecked")
 		HashMap<String, Sfx> map = (HashMap<String, Sfx>) ReflectionHacks.getPrivate(__instance, SoundMaster.class, "map");
@@ -747,6 +813,7 @@ public class BaseMod {
 	// Localization
 	//
 
+	@Deprecated
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private static void loadJsonStrings(Type stringType, String jsonString) {
 		logger.info("loadJsonStrings: " + stringType.getTypeName());
@@ -773,10 +840,12 @@ public class BaseMod {
 	// loadCustomRelicStrings - loads custom RelicStrings from provided JSON
 	// should be done inside the callback of an implementation of
 	// EditStringsSubscriber
+	@Deprecated
 	public static void loadCustomStrings(Class<?> stringType, String jsonString) {
 		loadJsonStrings(stringType, jsonString);
 	}
 
+	@Deprecated
 	public static void loadCustomStringsFile(Class<?> stringType, String filepath) {
 		loadJsonStrings(stringType, Gdx.files.internal(filepath).readString(String.valueOf(StandardCharsets.UTF_8)));
 	}
@@ -786,71 +855,85 @@ public class BaseMod {
 	//
 
 	// red add -
+	@Deprecated
 	public static ArrayList<AbstractCard> getRedCardsToAdd() {
 		return redToAdd;
 	}
 
 	// red remove -
+	@Deprecated
 	public static ArrayList<String> getRedCardsToRemove() {
 		return redToRemove;
 	}
 
 	// green add -
+	@Deprecated
 	public static ArrayList<AbstractCard> getGreenCardsToAdd() {
 		return greenToAdd;
 	}
 
 	// green remove -
+	@Deprecated
 	public static ArrayList<String> getGreenCardsToRemove() {
 		return greenToRemove;
 	}
 
 	// blue add -
+	@Deprecated
 	public static ArrayList<AbstractCard> getBlueCardsToAdd() {
 		return blueToAdd;
 	}
 
 	// blue remove -
+	@Deprecated
 	public static ArrayList<String> getBlueCardsToRemove() {
 		return blueToRemove;
 	}
 
 	// colorless add -
+	@Deprecated
 	public static ArrayList<AbstractCard> getColorlessCardsToAdd() {
 		return colorlessToAdd;
 	}
 
 	// colorless remove -
+	@Deprecated
 	public static ArrayList<String> getColorlessCardsToRemove() {
 		return colorlessToRemove;
 	}
 
 	// curse add -
+	@Deprecated
 	public static ArrayList<AbstractCard> getCurseCardsToAdd() {
 		return curseToAdd;
 	}
 
 	// curse remove -
+	@Deprecated
 	public static ArrayList<String> getCurseCardsToRemove() {
 		return curseToRemove;
 	}
 
 	// custom add -
+	@Deprecated
 	public static ArrayList<AbstractCard> getCustomCardsToAdd() {
 		return customToAdd;
 	}
 
 	// custom remove -
+	@Deprecated
 	public static ArrayList<String> getCustomCardsToRemove() {
 		return customToRemove;
 	}
 
 	// custom remove colors -
+	@Deprecated
 	public static ArrayList<AbstractCard.CardColor> getCustomCardsToRemoveColors() {
 		return customToRemoveColors;
 	}
 
 	// add audio to add
+	@Deprecated
 	public static void addAudio(String audioKey, String file)
 	{
 		FileHandle sfxFile = Gdx.files.internal(file); // Ensure audio is valid file
@@ -864,6 +947,7 @@ public class BaseMod {
 	}
 
 	// add card
+	@Deprecated
 	public static void addCard(AbstractCard card) {
 		switch (card.color) {
 			case RED:
@@ -888,6 +972,7 @@ public class BaseMod {
 	}
 
 	// remove card
+	@Deprecated
 	public static void removeCard(String card, AbstractCard.CardColor color) {
 		switch (color) {
 			case RED:
@@ -912,6 +997,7 @@ public class BaseMod {
 		}
 	}
 
+	@Deprecated
 	public static void addDynamicVariable(DynamicVariable dv) {
 		cardDynamicVariableMap.put(dv.key(), dv);
 	}
@@ -960,6 +1046,7 @@ public class BaseMod {
 	//
 
 	// add relic -
+	@Deprecated
 	public static void addRelic(AbstractRelic relic, RelicType type) {
 		switch (type) {
 			case SHARED:
@@ -985,6 +1072,7 @@ public class BaseMod {
 	}
 
 	// remove relic -
+	@Deprecated
 	@SuppressWarnings("unchecked")
 	public static void removeRelic(AbstractRelic relic, RelicType type) {
 		// note that this has to use reflection hacks to change the private
@@ -1038,35 +1126,55 @@ public class BaseMod {
 	}
 
 	// remove custom relic -
+	@Deprecated
 	@SuppressWarnings("unchecked")
 	public static void removeRelicFromCustomPool(AbstractRelic relic, AbstractCard.CardColor color) {
+		_internal_RemoveRelicFromCustomPool(relic, color, BaseMod::removeRelicFromTierList);
+	}
+
+	public static void _internal_RemoveRelicFromCustomPool(AbstractRelic relic, AbstractCard.CardColor color, Consumer<AbstractRelic> removeRelicFromTierList) {
 		if (relic == null) return;
-		if (customRelicPools.containsKey(color)){
+		if (customRelicPools.containsKey(color)) {
 			if (customRelicPools.get(color).containsKey(relic.relicId)) {
 				customRelicPools.get(color).remove(relic.relicId);
 				--RelicLibrary.totalRelicCount;
-				removeRelicFromTierList(relic);
+				removeRelicFromTierList.accept(relic);
 			}
 		}
-		if (customRelicLists.containsKey(color)){
-			if (customRelicLists.get(color).contains(relic)){
-				customRelicLists.get(color).remove(relic);
-			}
+		if (customRelicLists.containsKey(color)) {
+			customRelicLists.get(color).remove(relic);
 		}
 	}
 
+	public static void _internal_AddBottleRelic(String relidId, Predicate<AbstractCard> isOnCard, AbstractRelic relic) {
+		customBottleRelics.put(relidId, new Pair<>(isOnCard, relic));
+	}
+
+	@Deprecated
 	public static void registerBottleRelic(Predicate<AbstractCard> isOnCard, AbstractRelic relic)
 	{
 		customBottleRelics.put(relic.relicId, new Pair<>(isOnCard, relic));
 	}
 
+	@Deprecated
 	public static void registerBottleRelic(SpireField<Boolean> isOnCard, AbstractRelic relic)
 	{
 		customBottleRelics.put(relic.relicId, new Pair<>(isOnCard::get, relic));
 	}
 
 	// addRelicToCustomPool -
+	@Deprecated
 	public static void addRelicToCustomPool(AbstractRelic relic, AbstractCard.CardColor color) {
+		_internal_AddRelicToCustomPool(relic, color);
+
+		if (customRelicPools.containsKey(color)) {
+			if (relic instanceof CustomBottleRelic) {
+				registerBottleRelic(((CustomBottleRelic) relic).isOnCard(), relic);
+			}
+		}
+	}
+
+	public static void _internal_AddRelicToCustomPool(AbstractRelic relic, AbstractCard.CardColor color) {
 		if (customRelicPools.containsKey(color)) {
 			if (UnlockTracker.isRelicSeen(relic.relicId)) {
 				RelicLibrary.seenRelics++;
@@ -1075,10 +1183,6 @@ public class BaseMod {
 			customRelicPools.get(color).put(relic.relicId, relic);
 			RelicLibrary.addToTierList(relic);
 			customRelicLists.get(color).add(relic);
-
-			if (relic instanceof CustomBottleRelic) {
-				registerBottleRelic(((CustomBottleRelic) relic).isOnCard(), relic);
-			}
 		} else {
 			logger.error("could not add relic to non existent custom pool: " + color);
 		}
@@ -1109,6 +1213,7 @@ public class BaseMod {
 		return customBottleRelics.values();
 	}
 
+	@Deprecated
 	private static void removeRelicFromTierList(AbstractRelic relic) {
 		switch (relic.tier) {
 			case STARTER:
@@ -1141,6 +1246,7 @@ public class BaseMod {
 	}
 
 	// force remove relic -
+	@Deprecated
 	public static void removeRelic(AbstractRelic relic) {
 		removeRelic(relic, RelicType.SHARED);
 		removeRelic(relic, RelicType.RED);
@@ -1457,14 +1563,17 @@ public class BaseMod {
 	// Keywords
 	//
 
+	@Deprecated
 	public static void addKeyword(String[] names, String description) {
 		addKeyword(null, names, description);
 	}
 
+	@Deprecated
 	public static void addKeyword(String proper, String[] names, String description) {
 		addKeyword(null, proper, names, description);
 	}
 
+	@Deprecated
 	public static void addKeyword(String modID, String proper, String[] names, String description) {
 		if (modID != null && !modID.isEmpty()) {
 			if (!modID.endsWith(":")) {
@@ -1489,6 +1598,18 @@ public class BaseMod {
 			GameDictionary.keywords.put(name, description);
 			GameDictionary.parentWord.put(name, parent);
 		}
+	}
+
+	public static void _internal_AddKeywordProperName(String keyword, String proper) {
+		keywordProperNames.put(keyword, proper);
+	}
+
+	public static void _internal_AddKeywordUnique(String keyword, String unique) {
+		keywordUniqueNames.put(keyword, unique);
+	}
+
+	public static void _internal_AddKeywordPrefix(String keyword, String prefix) {
+		keywordUniquePrefixes.put(keyword, prefix);
 	}
 
 	public static String getKeywordProper(String keyword)
@@ -1573,23 +1694,33 @@ public class BaseMod {
 
 	// add character - the String characterID *must* be the exact same as what
 	// you put in the PlayerClass enum
+	@Deprecated
 	public static void addCharacter(AbstractPlayer character,
 									String selectButtonPath,
 									String portraitPath,
 									PlayerClass characterID,
 									String customModeButtonPath) {
-		CardCrawlGame.characterManager.getAllCharacters().add(character);
-
-		playerSelectButtonMap.put(characterID, selectButtonPath);
-		customModeCharacterButtonMap.put(characterID, customModeButtonPath);
-		playerPortraitMap.put(characterID, portraitPath);
+		_internal_AddCharacter(CardCrawlGame.characterManager, character, selectButtonPath, portraitPath, customModeButtonPath);
 	}
 
+	@Deprecated
 	public static void addCharacter(AbstractPlayer character,
 									String selectButtonPath,
 									String portraitPath,
 									PlayerClass characterID) {
 		addCharacter(character, selectButtonPath, portraitPath, characterID, null);
+	}
+
+	public static void _internal_AddCharacter(CharacterManager characterManager,
+	                                          AbstractPlayer character,
+	                                          String selectButtonPath,
+	                                          String portraitPath,
+	                                          String customModeButtonPath) {
+		characterManager.getAllCharacters().add(character);
+
+		playerSelectButtonMap.put(character.chosenClass, selectButtonPath);
+		customModeCharacterButtonMap.put(character.chosenClass, customModeButtonPath);
+		playerPortraitMap.put(character.chosenClass, portraitPath);
 	}
 
 	public static TextureAtlas.AtlasRegion getCardSmallEnergy() {
@@ -1639,7 +1770,8 @@ public class BaseMod {
 					CardCrawlGame.characterManager.recreateCharacter(character.chosenClass),
 					// note that these will fail so we patch this in
 					// basemode.patches.com.megacrit.cardcrawl.screens.charSelect.CharacterOption.CtorSwitch
-					playerSelectButtonMap.get(character.chosenClass), playerPortraitMap.get(character.chosenClass)
+					playerSelectButtonMap.get(character.chosenClass),
+					playerPortraitMap.get(character.chosenClass)
 			);
 			options.add(option);
 		}
@@ -1662,12 +1794,15 @@ public class BaseMod {
 	//
 
 	// add a color -
+	@Deprecated
 	public static void addColor(AbstractCard.CardColor color, Color everythingColor,
 								String attackBg, String skillBg, String powerBg, String energyOrb,
 								String attackBgPortrait, String skillBgPortrait, String powerBgPortrait, String energyOrbPortrait,
 								String cardEnergyOrb) {
 		addColor(color, everythingColor, everythingColor, everythingColor, everythingColor, everythingColor, everythingColor, everythingColor, attackBg, skillBg, powerBg, energyOrb, attackBgPortrait, skillBgPortrait, powerBgPortrait, energyOrbPortrait, cardEnergyOrb);
 	}
+
+	@Deprecated
 	public static void addColor(AbstractCard.CardColor color, com.badlogic.gdx.graphics.Color bgColor,
 								com.badlogic.gdx.graphics.Color backColor, com.badlogic.gdx.graphics.Color frameColor,
 								com.badlogic.gdx.graphics.Color frameOutlineColor, com.badlogic.gdx.graphics.Color descBoxColor,
@@ -1676,6 +1811,8 @@ public class BaseMod {
 								String attackBgPortrait, String skillBgPortrait, String powerBgPortrait, String energyOrbPortrait) {
 		addColor(color, bgColor, backColor, frameColor, frameOutlineColor, descBoxColor, trailVfxColor, glowColor, attackBg, skillBg, powerBg, energyOrb, attackBgPortrait, skillBgPortrait, powerBgPortrait, energyOrbPortrait, null);
 	}
+
+	@Deprecated
 	public static void addColor(AbstractCard.CardColor color, com.badlogic.gdx.graphics.Color bgColor,
 								com.badlogic.gdx.graphics.Color backColor, com.badlogic.gdx.graphics.Color frameColor,
 								com.badlogic.gdx.graphics.Color frameOutlineColor, com.badlogic.gdx.graphics.Color descBoxColor,
@@ -1683,6 +1820,16 @@ public class BaseMod {
 								String attackBg, String skillBg, String powerBg, String energyOrb,
 								String attackBgPortrait, String skillBgPortrait, String powerBgPortrait, String energyOrbPortrait,
 								String cardEnergyOrb) {
+		_internal_AddColor(color, bgColor, backColor, frameColor, frameOutlineColor, descBoxColor, trailVfxColor, glowColor, attackBg, skillBg, powerBg, energyOrb, attackBgPortrait, skillBgPortrait, powerBgPortrait, energyOrbPortrait, cardEnergyOrb);
+	}
+
+	public static void _internal_AddColor(AbstractCard.CardColor color, com.badlogic.gdx.graphics.Color bgColor,
+	                            com.badlogic.gdx.graphics.Color backColor, com.badlogic.gdx.graphics.Color frameColor,
+	                            com.badlogic.gdx.graphics.Color frameOutlineColor, com.badlogic.gdx.graphics.Color descBoxColor,
+	                            com.badlogic.gdx.graphics.Color trailVfxColor, com.badlogic.gdx.graphics.Color glowColor,
+	                            String attackBg, String skillBg, String powerBg, String energyOrb,
+	                            String attackBgPortrait, String skillBgPortrait, String powerBgPortrait, String energyOrbPortrait,
+	                            String cardEnergyOrb) {
 		colorBgColorMap.put(color, bgColor);
 		colorBackColorMap.put(color, backColor);
 		colorFrameColorMap.put(color, frameColor);
@@ -1708,7 +1855,12 @@ public class BaseMod {
 
 	// remove a custom color -
 	// removing existing colors not currently supported
+	@Deprecated
 	public static void removeColor(AbstractCard.CardColor color) {
+		_internal_RemoveColor(color);
+	}
+
+	public static void _internal_RemoveColor(AbstractCard.CardColor color) {
 		colorBgColorMap.remove(color);
 		colorBackColorMap.remove(color);
 		colorFrameColorMap.remove(color);
@@ -1966,15 +2118,26 @@ public class BaseMod {
 		return potionsToRemove;
 	}
 
+	@Deprecated
 	public static void removePotion(String potionID) {
+		_internal_RemovePotion(potionID);
+	}
+
+	public static void _internal_RemovePotion(String potionID) {
 		potionsToRemove.add(potionID);
 	}
 
 	// add the Potion to the map
+	@Deprecated
 	public static void addPotion(Class<? extends AbstractPotion> potionClass, Color liquidColor, Color hybridColor, Color spotsColor, String potionID) {
 		addPotion(potionClass, liquidColor, hybridColor, spotsColor, potionID, null);
 	}
+	@Deprecated
 	public static void addPotion(Class<? extends AbstractPotion> potionClass, Color liquidColor, Color hybridColor, Color spotsColor, String potionID, AbstractPlayer.PlayerClass playerClass) {
+		_internal_AddPotion(playerClass, potionClass, liquidColor, hybridColor, spotsColor, potionID);
+	}
+
+	public static void _internal_AddPotion(PlayerClass playerClass, Class<? extends AbstractPotion> potionClass, Color liquidColor, Color hybridColor, Color spotsColor, String potionID) {
 		potionClassMap.put(potionID, potionClass);
 		potionLiquidColorMap.put(potionID, liquidColor);
 		potionHybridColorMap.put(potionID, hybridColor);
@@ -2068,6 +2231,7 @@ public class BaseMod {
 	//
 
 	// publishStartAct -
+	@Deprecated
 	public static void publishStartAct() {
 		logger.info("publishStartAct");
 		for (StartActSubscriber sub : startActSubscribers) {
@@ -2077,6 +2241,8 @@ public class BaseMod {
 	}
 
 	// publishPostCampfire - false allows an additional option to be selected
+	@Deprecated
+	@SuppressWarnings("unused")
 	public static boolean publishPostCampfire() {
 		logger.info("publishPostCampfire");
 
@@ -2093,6 +2259,7 @@ public class BaseMod {
 	}
 
 	// publishPostDraw -
+	@Deprecated
 	public static void publishPostDraw(AbstractCard c) {
 		logger.info("publishPostDraw");
 		for (PostDrawSubscriber sub : postDrawSubscribers) {
@@ -2102,6 +2269,7 @@ public class BaseMod {
 	}
 
 	// publishPostExhaust -
+	@Deprecated
 	public static void publishPostExhaust(AbstractCard c) {
 		logger.info("publishPostExhaust");
 		for (PostExhaustSubscriber sub : postExhaustSubscribers) {
@@ -2111,6 +2279,7 @@ public class BaseMod {
 	}
 
 	// publishPostDungeonInitialize -
+	@Deprecated
 	public static void publishPostDungeonInitialize() {
 		logger.info("publishPostDungeonInitialize");
 
@@ -2121,6 +2290,7 @@ public class BaseMod {
 	}
 
 	// publishPostEnergyRecharge -
+	@Deprecated
 	public static void publishPostEnergyRecharge() {
 		logger.info("publishPostEnergyRecharge");
 		for (PostEnergyRechargeSubscriber sub : postEnergyRechargeSubscribers) {
@@ -2130,6 +2300,7 @@ public class BaseMod {
 	}
 
 	// publishPostInitialize -
+	@Deprecated
 	public static void publishPostInitialize() {
 		logger.info("publishPostInitialize");
 
@@ -2144,6 +2315,8 @@ public class BaseMod {
 	}
 
 	// publishPreMonsterTurn - false skips monster turn
+	@Deprecated
+	@SuppressWarnings("unused")
 	public static boolean publishPreMonsterTurn(AbstractMonster m) {
 		logger.info("publishPreMonsterTurn");
 
@@ -2160,6 +2333,7 @@ public class BaseMod {
 	}
 
 	// publishRender -
+	@Deprecated
 	public static void publishRender(SpriteBatch sb) {
 		for (RenderSubscriber sub : renderSubscribers) {
 			sub.receiveRender(sb);
@@ -2168,6 +2342,7 @@ public class BaseMod {
 	}
 
 	// publishAnimationRender -
+	@Deprecated
 	public static void publishAnimationRender(SpriteBatch sb) {
 		if (modelRenderSubscribers.size() > 0) {
 			// custom animations
@@ -2182,6 +2357,7 @@ public class BaseMod {
 	}
 
 	// publishPreRender -
+	@Deprecated
 	public static void publishPreRender(OrthographicCamera camera) {
 		for (PreRenderSubscriber sub : preRenderSubscribers) {
 			sub.receiveCameraRender(camera);
@@ -2210,6 +2386,7 @@ public class BaseMod {
 	}
 
 	// publishPostRender -
+	@Deprecated
 	public static void publishPostRender(SpriteBatch sb) {
 		for (PostRenderSubscriber sub : postRenderSubscribers) {
 			sub.receivePostRender(sb);
@@ -2218,6 +2395,7 @@ public class BaseMod {
 	}
 
 	// publishPreStartGame -
+	@Deprecated
 	public static void publishPreStartGame() {
 		logger.info("publishPreStartGame");
 
@@ -2229,6 +2407,7 @@ public class BaseMod {
 		unsubscribeLaterHelper(PreStartGameSubscriber.class);
 	}
 
+	@Deprecated
 	public static void publishStartGame() {
 		logger.info("publishStartGame");
 
@@ -2242,6 +2421,7 @@ public class BaseMod {
 	}
 
 	// publishPreUpdate -
+	@Deprecated
 	public static void publishPreUpdate() {
 		for (PreUpdateSubscriber sub : preUpdateSubscribers) {
 			sub.receivePreUpdate();
@@ -2250,6 +2430,7 @@ public class BaseMod {
 	}
 
 	// publishPostUpdate -
+	@Deprecated
 	public static void publishPostUpdate() {
 		for (PostUpdateSubscriber sub : postUpdateSubscribers) {
 			sub.receivePostUpdate();
@@ -2258,6 +2439,7 @@ public class BaseMod {
 	}
 
 	// publishPostDungeonUpdate -
+	@Deprecated
 	public static void publishPostDungeonUpdate() {
 		for(PostDungeonUpdateSubscriber sub : postDungeonUpdateSubscribers) {
 			sub.receivePostDungeonUpdate();
@@ -2266,6 +2448,7 @@ public class BaseMod {
 	}
 
 	// publishPreDungeonUpdate -
+	@Deprecated
 	public static void publishPreDungeonUpdate() {
 		for(PreDungeonUpdateSubscriber sub : preDungeonUpdateSubscribers) {
 			sub.receivePreDungeonUpdate();
@@ -2274,6 +2457,7 @@ public class BaseMod {
 	}
 
 	// publishPostPlayerUpdate -
+	@Deprecated
 	public static void publishPostPlayerUpdate() {
 		for(PostPlayerUpdateSubscriber sub : postPlayerUpdateSubscribers) {
 			sub.receivePostPlayerUpdate();
@@ -2282,6 +2466,7 @@ public class BaseMod {
 	}
 
 	// publishPrePlayerUpdate -
+	@Deprecated
 	public static void publishPrePlayerUpdate() {
 		for(PrePlayerUpdateSubscriber sub : prePlayerUpdateSubscribers) {
 			sub.receivePrePlayerUpdate();
@@ -2290,6 +2475,7 @@ public class BaseMod {
 	}
 
 	// publishPostCreateStartingDeck -
+	@Deprecated
 	public static void publishPostCreateStartingDeck(PlayerClass chosenClass, CardGroup cards) {
 		logger.info("postCreateStartingDeck for: " + chosenClass);
 
@@ -2309,6 +2495,7 @@ public class BaseMod {
 	}
 
 	// publishPostCreateStartingRelics -
+	@Deprecated
 	public static void publishPostCreateStartingRelics(PlayerClass chosenClass, ArrayList<String> relics) {
 		logger.info("postCreateStartingRelics for: " + chosenClass);
 
@@ -2334,6 +2521,7 @@ public class BaseMod {
 	}
 
 	// publishPostCreateShopRelic -
+	@Deprecated
 	public static void publishPostCreateShopRelics(ArrayList<StoreRelic> relics, ShopScreen screenInstance) {
 		logger.info("postCreateShopRelics for: " + relics);
 
@@ -2344,6 +2532,7 @@ public class BaseMod {
 	}
 
 	// publishPostCreateShopPotion -
+	@Deprecated
 	public static void publishPostCreateShopPotions(ArrayList<StorePotion> potions, ShopScreen screenInstance) {
 		logger.info("postCreateShopPotions for: " + potions);
 
@@ -2354,6 +2543,7 @@ public class BaseMod {
 	}
 
 	// publishEditCards -
+	@Deprecated
 	public static void publishEditCards() {
 		logger.info("begin editing cards");
 
@@ -2368,6 +2558,7 @@ public class BaseMod {
 	}
 
 	// publishEditRelics -
+	@Deprecated
 	public static void publishEditRelics() {
 		logger.info("begin editing relics");
 
@@ -2378,6 +2569,7 @@ public class BaseMod {
 	}
 
 	// publishEditCharacters -
+	@Deprecated
 	public static void publishEditCharacters() {
 		logger.info("begin editing characters");
 
@@ -2390,6 +2582,7 @@ public class BaseMod {
 	}
 
 	// publishEditStrings -
+	@Deprecated
 	public static void publishEditStrings() {
 		logger.info("begin editing localization strings");
 
@@ -2402,6 +2595,7 @@ public class BaseMod {
 	}
 
 	// publishAddAudio -
+	@Deprecated
 	public static void publishAddAudio(SoundMaster __instance) {
 		logger.info("begin adding custom sounds");
 
@@ -2415,6 +2609,7 @@ public class BaseMod {
 	}
 
 	// publishPostBattle -
+	@Deprecated
 	public static void publishPostBattle(AbstractRoom battleRoom) {
 		logger.info("publish post combat");
 
@@ -2424,6 +2619,7 @@ public class BaseMod {
 		unsubscribeLaterHelper(PostBattleSubscriber.class);
 	}
 
+	@Deprecated
 	public static void publishStartBattle(AbstractRoom room){
 		logger.info("publish start battle");
 
@@ -2434,6 +2630,7 @@ public class BaseMod {
 	}
 
 	// publishPostRefresh -
+	@Deprecated
 	public static void publishPostRefresh() {
 		logger.info("publish post refresh - refreshing unlocks");
 
@@ -2444,6 +2641,7 @@ public class BaseMod {
 	}
 
 	// publishOnCardUse -
+	@Deprecated
 	public static void publishOnCardUse(AbstractCard c) {
 		logger.info("publish on card use");
 
@@ -2454,6 +2652,7 @@ public class BaseMod {
 	}
 
 	// publishPostUsePotion -
+	@Deprecated
 	public static void publishPostPotionUse(AbstractPotion p) {
 		logger.info("publish on post potion use");
 		for (PostPotionUseSubscriber sub : postPotionUseSubscribers) {
@@ -2463,6 +2662,7 @@ public class BaseMod {
 	}
 
 	// publishPostPotionUse -
+	@Deprecated
 	public static void publishPrePotionUse(AbstractPotion p) {
 		logger.info("publish on pre potion use");
 
@@ -2473,6 +2673,7 @@ public class BaseMod {
 	}
 
 	// publishPotionGet -
+	@Deprecated
 	public static void publishPotionGet(AbstractPotion p) {
 		logger.info("publish on potion get");
 
@@ -2483,6 +2684,7 @@ public class BaseMod {
 	}
 
 	// publishRelicGet -
+	@Deprecated
 	public static void publishRelicGet(AbstractRelic r) {
 		logger.info("publish on relic get");
 		for (RelicGetSubscriber sub : relicGetSubscribers) {
@@ -2492,6 +2694,7 @@ public class BaseMod {
 	}
 
 	// publishPostPowerApply
+	@Deprecated
 	public static void publishPostPowerApply(AbstractPower p, AbstractCreature target, AbstractCreature source) {
 		logger.info("publish on post power apply");
 
@@ -2502,6 +2705,7 @@ public class BaseMod {
 	}
 
 	// publishEditKeywords
+	@Deprecated
 	public static void publishEditKeywords() {
 		logger.info("editting keywords");
 
@@ -2514,6 +2718,7 @@ public class BaseMod {
 	}
 
 	// publishOnPowersModified
+	@Deprecated
 	public static void publishOnPowersModified() {
 		logger.info("powers modified");
 
@@ -2524,6 +2729,7 @@ public class BaseMod {
 	}
 
 	// publishPostDeath - Is triggered on death and victory
+	@Deprecated
 	public static void publishPostDeath() {
 		logger.info("publishPostDeath");
 
@@ -2533,22 +2739,9 @@ public class BaseMod {
 		unsubscribeLaterHelper(PostDeathSubscriber.class);
 	}
 
+	@Deprecated
 	public static void publishAddCustomModeMods(List<CustomMod> modList) {
 		logger.info("publishAddCustomModeMods");
-
-		CustomMod charMod = new CustomMod("Modded Character Cards", "p", false);
-		for (AbstractPlayer character : getModdedCharacters()) {
-			CustomMod mod = new CustomMod(RedCards.ID, "g", true);
-			mod.ID = character.chosenClass.name() + charMod.name;
-			mod.name = character.getLocalizedCharacterName() + charMod.name;
-			mod.description = character.getLocalizedCharacterName() + charMod.description;
-			String label = FontHelper.colorString("[" + mod.name + "]", mod.color) + " " + mod.description;
-			ReflectionHacks.setPrivate(mod, CustomMod.class, "label", label);
-			float height = -FontHelper.getSmartHeight(FontHelper.charDescFont, label, 1050.0F * Settings.scale, 32.0F * Settings.scale) + 70.0F * Settings.scale;
-			ReflectionHacks.setPrivate(mod, CustomMod.class, "height", height);
-
-			insertCustomMod(modList, mod);
-		}
 
 		for (AddCustomModeModsSubscriber sub : addCustomModeModsSubscribers) {
 			List<CustomMod> tmpModList = new ArrayList<>();
@@ -2559,6 +2752,7 @@ public class BaseMod {
 		unsubscribeLaterHelper(AddCustomModeModsSubscriber.class);
 	}
 
+	@Deprecated
 	private static void insertCustomMod(List<CustomMod> modList, CustomMod mod)
 	{
 		int lastIndex = modList.size();
@@ -2570,6 +2764,7 @@ public class BaseMod {
 		modList.add(lastIndex, mod);
 	}
 
+	@Deprecated
 	public static int publishMaxHPChange(int amount) {
 		logger.info("publishMaxHPChange");
 
@@ -2581,6 +2776,7 @@ public class BaseMod {
 		return amount;
 	}
 
+	@Deprecated
 	public static void publishPreRoomRender(SpriteBatch sb) {
 		for(PreRoomRenderSubscriber sub : preRoomRenderSubscribers) {
 			sub.receivePreRoomRender(sb);
@@ -2588,6 +2784,7 @@ public class BaseMod {
 	}
 
 	// publishOnPlayerLoseBlock
+	@Deprecated
 	public static int publishOnPlayerLoseBlock(int amount) {
 		logger.info("publish on Player Lose Block");
 
@@ -2599,6 +2796,7 @@ public class BaseMod {
 		return amount;
 	}
 
+	@Deprecated
 	public static int publishOnPlayerDamaged(int amount, DamageInfo info) {
 		logger.info("publish on Player Damaged");
 
@@ -2615,6 +2813,7 @@ public class BaseMod {
 	//
 
 	// unsubscribes all elements of toRemove that are of type removalClass
+	@Deprecated
 	private static void unsubscribeLaterHelper(Class<? extends ISubscriber> removalClass) {
 		for (ISubscriber sub : toRemove) {
 			if (removalClass.isInstance(sub)) {
@@ -2623,12 +2822,14 @@ public class BaseMod {
 		}
 	}
 
+	@Deprecated
 	private static <T> void subscribeIfInstance(ArrayList<T> list, ISubscriber sub, Class<T> clazz) {
 		if (clazz.isInstance(sub)) {
 			list.add(clazz.cast(sub));
 		}
 	}
 
+	@Deprecated
 	private static <T> void unsubscribeIfInstance(ArrayList<T> list, ISubscriber sub, Class<T> clazz) {
 		if (clazz.isInstance(sub)) {
 			list.remove(clazz.cast(sub));
@@ -2637,6 +2838,7 @@ public class BaseMod {
 
 	// subscribe -
 	// will subscribe to all lists this sub implements
+	@Deprecated
 	public static void subscribe(ISubscriber sub) {
 		subscribeIfInstance(startActSubscribers, sub, StartActSubscriber.class);
 		subscribeIfInstance(postCampfireSubscribers, sub, PostCampfireSubscriber.class);
@@ -2688,6 +2890,7 @@ public class BaseMod {
 
 	// subscribe -
 	// only subscribers to a specific list
+	@Deprecated
 	public static void subscribe(ISubscriber sub, Class<? extends ISubscriber> additionClass) {
 		if (additionClass.equals(StartActSubscriber.class)) {
 			startActSubscribers.add((StartActSubscriber) sub);
@@ -2784,6 +2987,7 @@ public class BaseMod {
 
 	// unsubscribe -
 	// will unsubscribe from all lists this sub implements
+	@Deprecated
 	public static void unsubscribe(ISubscriber sub) {
 		unsubscribeIfInstance(startActSubscribers, sub, StartActSubscriber.class);
 		unsubscribeIfInstance(postCampfireSubscribers, sub, PostCampfireSubscriber.class);
@@ -2834,6 +3038,7 @@ public class BaseMod {
 
 	// unsubscribe -
 	// only unsubscribe from a specific list
+	@Deprecated
 	public static void unsubscribe(ISubscriber sub, Class<? extends ISubscriber> removalClass) {
 		if (removalClass.equals(StartActSubscriber.class)) {
 			startActSubscribers.remove(sub);
@@ -2931,6 +3136,7 @@ public class BaseMod {
 	}
 
 	// unsubscribeLater -
+	@Deprecated
 	public static void unsubscribeLater(ISubscriber sub) {
 		toRemove.add(sub);
 	}
